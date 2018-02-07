@@ -24,11 +24,11 @@ app.on('ready', () => {
         win.show()
     })
 
-    win.on('move', () => {
+    /*win.on('move', () => {
         const position = win.getPosition()
         console.log(`la posicion de la ventana es ${position}`);
         
-    })
+    })*/
 
     //detectando el cierre de la ventana
     win.on('closed', () => {
@@ -36,5 +36,5 @@ app.on('ready', () => {
         app.quit()
     })
 
-    win.loadURL('https://kevinbueno.me/')
+    win.loadURL(`file://${__dirname}/index.html`)
 })
