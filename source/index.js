@@ -36,5 +36,5 @@ app.on('ready', () => {
         app.quit()
     })
 
-    win.loadURL(`file://${__dirname}/index.html`)
+    win.loadURL(`file://${__dirname}/renderer/index.html`)
 })

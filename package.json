@@ -4,7 +4,7 @@
   "description": "visualizador de fotos multiplataforma con electron",
   "main": "index.js",
   "scripts": {
-    "dev":"electron index.js",
+    "dev":"electron source/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kevin Andrey Bueno Solano",
