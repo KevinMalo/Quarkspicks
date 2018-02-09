@@ -1,7 +1,12 @@
 'use strict'
 
 // instanciando los objetos app y BrowserWindows (anhade una ventana)
-const { app, BrowserWindow } = require('electron')
+import { app, BrowserWindow } from 'electron'
+import devtools from './devtools'
+
+if (process.env.NODE_ENV == 'development'){
+    devtools()
+}
 
 //Imprimiendo un mensaje en la consola antes de salir
 app.on('before-quit', () => {
@@ -37,4 +42,8 @@ app.on('ready', () => {
     })
 
     win.loadURL(`file://${__dirname}/renderer/index.html`)
+    
+    //Activa las herramientas de desarrollo
+    win.toggleDevTools()
+
 })
