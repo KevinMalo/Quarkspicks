@@ -1,8 +1,10 @@
 'use strict'
 
 // instanciando los objetos app y BrowserWindows (anhade una ventana)
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 import devtools from './devtools'
+
+let win
 
 if (process.env.NODE_ENV == 'development'){
     devtools()
@@ -17,7 +19,7 @@ app.on('before-quit', () => {
 app.on('ready', () => {
 
     //creando una ventana
-    let win = new BrowserWindow({
+    win = new BrowserWindow({
         width: 800,
         height: 600,
         title: 'Hola mundo',
@@ -46,4 +48,16 @@ app.on('ready', () => {
     //Activa las herramientas de desarrollo
     win.toggleDevTools()
 
+})
+
+ipcMain.on('open-directory', (event) => {
+    dialog.showOpenDialog(win, {
+        title: "Seleccione la nueva ubicacion",
+        buttonLabel: 'Abrir Ubicacion',
+        properties: ['openDirectory']
+    }),
+    (dir) => {
+        console.log(dir);
+        
+    }
 })

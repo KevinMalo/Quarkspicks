@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hola Mundo</title>
+    <title>Quarkspicks</title>
 
     <link rel="stylesheet" href="../assets/css/photon.min.css">
     <link rel="stylesheet" href="../assets/css/main.css">
+
+    <script src="./lib/filterous2-2.0.0.min.js"></script>
 
 </head>
 
@@ -19,9 +21,9 @@
                 <div class="pane pane-sm sidebar">
                     <ul class="list-group">
                         <li class="list-group-header">
-                            <input class="form-control" type="text" placeholder="Search for someone">
+                            <input id="search-box" class="form-control" type="text" placeholder="Buscar imagen">
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item selected">
                             <img class="media-object pull-left" src="../assets/img/1.jpg" height="32">
                             <div class="media-body">
                                 <strong>1.jpg</strong>
@@ -29,28 +31,28 @@
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <img class="media-object pull-left" src="../assets/img/1.jpg" height="32">
+                            <img class="media-object pull-left" src="../assets/img/2.jpg" height="32">
                             <div class="media-body">
                                 <strong>2.jpg</strong>
                                 <p>1 MB</p>
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <img class="media-object pull-left" src="../assets/img/2.jpg" height="32">
+                            <img class="media-object pull-left" src="../assets/img/3.jpg" height="32">
                             <div class="media-body">
                                 <strong>3.jpg</strong>
                                 <p>1 MB</p>
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <img class="media-object pull-left" src="../assets/img/3.jpg" height="32">
+                            <img class="media-object pull-left" src="../assets/img/4.jpg" height="32">
                             <div class="media-body">
                                 <strong>4.jpg</strong>
                                 <p>1 MB</p>
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <img class="media-object pull-left" src="../assets/img/4.jpg" height="32">
+                            <img class="media-object pull-left" src="../assets/img/5.jpg" height="32">
                             <div class="media-body">
                                 <strong>5.jpg</strong>
                                 <p>1 MB</p>
@@ -63,20 +65,59 @@
                         <header class="toolbar toolbar-header image-toolbar">
                             <div class="toolbar-actions">
                                 <div class="btn-group">
-                                    <button class="btn btn-default">
+                                    <button id="open-directory" class="btn btn-default">
                                         <span class="icon icon-folder icon-text"></span>
                                         Abrir ubicacion
                                     </button>
                                 </div>
 
                                 <button class="btn btn-default pull-right">
-                                    <span class="icon icon-download icon-text"></span>
+                                    <span id="" class="icon icon-download icon-text"></span>
                                     Guardar
                                 </button>
 
                                 <select id="filters" class="pull-right">
-                                    <option value="none">Ninguno</option>
-                                    <option value="sepia">Sepia</option>
+                                    <option value="normal">normal</option>
+                                    <option value="juno">juno</option>
+                                    <option value="amaro">amaro</option>
+                                    <option value="sierra">sierra</option>
+                                    <option value="stinson">stinson</option>
+                                    <option value="walden">walden</option>
+                                    <option value="dogpatch">dogpatch</option>
+                                    <option value="clarendon">clarendon</option>
+                                    <option value="slumber">slumber</option>
+                                    <option value="mayfair">mayfair</option>
+                                    <option value="willow">willow</option>
+                                    <option value="vesper">vesper</option>
+                                    <option value="1977">1977</option>
+                                    <option value="brooklyn">brooklyn</option>
+                                    <option value="gingham">gingham</option>
+                                    <option value="crema">crema</option>
+                                    <option value="rise">rise</option>
+                                    <option value="lofi">lofi</option>
+                                    <option value="earlybird">earlybird</option>
+                                    <option value="kelvin">kelvin</option>
+                                    <option value="helena">helena</option>
+                                    <option value="moon">moon</option>
+                                    <option value="ludwig">ludwig</option>
+                                    <option value="hudson">hudson</option>
+                                    <option value="inkwell">inkwell</option>
+                                    <option value="brannan">brannan</option>
+                                    <option value="maven">maven</option>
+                                    <option value="ashby">ashby</option>
+                                    <option value="lark">lark</option>
+                                    <option value="aden">aden</option>
+                                    <option value="valencia">valencia</option>
+                                    <option value="hefe">hefe</option>
+                                    <option value="sutro">sutro</option>
+                                    <option value="ginza">ginza</option>
+                                    <option value="charmes">charmes</option>
+                                    <option value="reyes">reyes</option>
+                                    <option value="perpetua">perpetua</option>
+                                    <option value="xpro2">xpro2</option>
+                                    <option value="nashville">nashville</option>
+                                    <option value="toaster">toaster</option>
+                                    <option value="skyline">skyline</option>
                                 </select>
                                 <label class="pull-right filter-label">Filtros:</label>
 
